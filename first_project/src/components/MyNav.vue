@@ -39,6 +39,14 @@ export default {
           name: "Slot",
           path: "/slot",
         },
+        {
+          name: "Form",
+          path: "/form",
+        },
+        {
+          name: "Api",
+          path: "/api",
+        },
       ],
     };
   },

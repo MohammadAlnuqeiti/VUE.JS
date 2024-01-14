@@ -8,7 +8,7 @@
     <button @click="deleteUser">change ref</button>
 
     <p>my active is : {{ isActive }}</p>
-    
+
     <button @click="$emit('updateActive', false)">change active</button>
   </div>
 </template>

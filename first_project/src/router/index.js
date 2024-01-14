@@ -6,6 +6,8 @@ import Login from "@/views/LoginPage.vue";
 import SignUo from "../views/SignUp.vue";
 import About from "../views/AboutPage.vue";
 import Slot from "../views/SlotPage.vue";
+import Form from "../views/FormPage.vue";
+import Api from "../views/ApiData.vue";
 
 const routes = [
   {
@@ -37,6 +39,16 @@ const routes = [
     name: "slot_page",
     path: "/slot",
     component: Slot,
+  },
+  {
+    name: "form_page",
+    path: "/form",
+    component: Form,
+  },
+  {
+    name: "api_page",
+    path: "/api",
+    component: Api,
   },
 ];
 
