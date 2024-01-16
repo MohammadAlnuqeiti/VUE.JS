@@ -21,11 +21,29 @@
         </tr>
       </tbody>
     </table>
+    <hr />
+    <h2>mixins</h2>
+    <table id="table">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Age</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr v-for="(s, i) in students" :key="i">
+          <td>{{ s.name }}</td>
+          <td>{{ s.age }}</td>
+        </tr>
+      </tbody>
+    </table>
   </div>
 </template>
 
 <script>
+import setMixin from "../mixins/stMixin";
 export default {
+  mixins: [setMixin],
   data() {
     return {
       products: [],

@@ -1,6 +1,6 @@
 <template>
   <div class="my-main">
-    <h2>this is maim page</h2>
+    <h2 v-maxSize="35" v-changeColor="'blue'">this is maim page</h2>
     <p>
       Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis
       obcaecati quas quibusdam aspernatur dignissimos. Voluptate error incidunt,

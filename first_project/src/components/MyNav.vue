@@ -5,8 +5,15 @@
     </div>
     <div class="links">
       <ul>
-        <li v-for="(link, i) in links" :key="i">
-          <router-link :to="link.path">{{ link.name }}</router-link>
+        <li v-for="(link, i) in filteredRoutes" :key="i">
+          <router-link
+            v-if="link.meta.title == 'Profile'"
+            :to="{ name: link.name, params: { userId: 15 } }"
+            >{{ link.meta.title }}</router-link
+          >
+          <router-link v-else :to="{ name: link.name }">{{
+            link.meta.title
+          }}</router-link>
         </li>
       </ul>
     </div>
@@ -48,7 +55,18 @@ export default {
           path: "/api",
         },
       ],
+      myRoutes: [],
     };
+  },
+  mounted() {
+    this.myRoutes = this.$router.options.routes;
+  },
+  computed: {
+    filteredRoutes() {
+      return this.myRoutes.filter(
+        (link) => !link.meta.requiresLogin && !link.meta.requiresSignup
+      );
+    },
   },
 };
 </script>
