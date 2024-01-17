@@ -9,6 +9,9 @@ import Slot from "../views/SlotPage.vue";
 import Form from "../views/FormPage.vue";
 import Api from "../views/ApiData.vue";
 import Profile from "../views/ProfilePage.vue";
+import MyLearning from "../views/MyLearning.vue";
+import MyWishlist from "../views/MyWishlist.vue";
+import NotFound from "../views/NotFound.vue";
 
 const routes = [
   {
@@ -97,6 +100,27 @@ const routes = [
     component: Profile,
     meta: {
       title: "Profile",
+      requiresLogin: false,
+      requiresSignup: false,
+    },
+    children: [
+      {
+        name: "my_learning",
+        path: "my_learning",
+        component: MyLearning,
+      },
+      {
+        name: "my_wishlist",
+        path: "my_wishlist",
+        component: MyWishlist,
+      },
+    ],
+  },
+  {
+    name: "not_found",
+    path: "/:pathMatch(.*)*",
+    component: NotFound,
+    meta: {
       requiresLogin: false,
       requiresSignup: false,
     },
