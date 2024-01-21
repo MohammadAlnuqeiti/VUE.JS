@@ -28,6 +28,19 @@
           <li class="nav-item">
             <router-link class="nav-link" to="/mixin">Mixins</router-link>
           </li>
+          <li class="nav-item">
+            <router-link class="nav-link" to="/hooks">Life Cycle</router-link>
+          </li>
+          <li class="nav-item">
+            <router-link class="nav-link" to="/add-todo"
+              >Add To Do List</router-link
+            >
+          </li>
+          <li class="nav-item">
+            <router-link class="nav-link" to="/show-todo"
+              >Show To Do</router-link
+            >
+          </li>
         </ul>
       </div>
     </div>
@@ -35,8 +48,15 @@
 </template>
 
 <script setup>
-import { defineProps } from "vue";
+import { defineProps, inject, onMounted } from "vue";
 
+const emitter = inject("emitter");
+
+onMounted(() => {
+  emitter.on("globalEmitt", (data) => {
+    console.log(data);
+  });
+});
 //props
 const props = defineProps({
   name: {

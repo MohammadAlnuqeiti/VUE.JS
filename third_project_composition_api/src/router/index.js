@@ -26,6 +26,30 @@ const routes = [
       title: "Mixins",
     },
   },
+  {
+    path: "/hooks",
+    name: "hooks",
+    component: () => import("../views/LifeCycle.vue"), // lazy load
+    meta: {
+      title: "Life Cycle",
+    },
+  },
+  {
+    path: "/add-todo",
+    name: "add-todo",
+    component: () => import("../views/To Do List/addTodo.vue"), // lazy load
+    meta: {
+      title: "Add To Do",
+    },
+  },
+  {
+    path: "/show-todo",
+    name: "show-todo",
+    component: () => import("../views/To Do List/showTodo.vue"), // lazy load
+    meta: {
+      title: "Show To Do",
+    },
+  },
 ];
 
 const router = createRouter({
