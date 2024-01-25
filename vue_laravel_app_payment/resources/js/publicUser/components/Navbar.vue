@@ -1,7 +1,7 @@
 <template>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container-fluid">
-            <a class="navbar-brand" href="#">
+            <router-link class="navbar-brand" to="/">
                 <svg
                     xmlns="http://www.w3.org/2000/svg"
                     fill="none"
@@ -16,7 +16,7 @@
                         d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"
                     ></path>
                 </svg>
-                | Shopping Cart</a
+                | Shopping Cart</router-link
             >
             <button
                 class="navbar-toggler"
@@ -67,6 +67,9 @@ svg {
 }
 .nav-item {
     cursor: pointer;
+    text-decoration:none;
+    color: var(--bs-navbar-brand-color);
+    font-weight: 500;
 }
 .btn {
     background-color: #bcd0c7 !important;
